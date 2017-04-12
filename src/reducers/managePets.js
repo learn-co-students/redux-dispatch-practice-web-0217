@@ -20,11 +20,16 @@ export function managePets(state = { pets: [] }, action){
   }
 }
 
-export function dispatch(){
+export function dispatch(action){
   state = managePets(state, action)
   render()
 }
 
 export function render(){
-
+  document.getElementById('container').innerHTML =
+    `<ul>
+      ${state.pets.map(pet => {
+        return `<li>${pet.name}</li>`
+      }).join(' ')}
+    </ul>`
 }
