@@ -27,9 +27,7 @@ export function dispatch(action){
 
 export function render(){
   document.getElementById('container').innerHTML =
-    `<ul>
-      ${state.pets.map(pet => {
+    `<ul>${state.pets.map(pet => {
         return `<li>${pet.name}</li>`
-      }).join(' ')}
-    </ul>`
+      }).join(' ')}</ul>`
 }
